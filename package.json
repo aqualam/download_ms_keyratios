@@ -1,0 +1,22 @@
+{
+    "name": "download_ms_keyratios",
+    "version": "1.0.0",
+    "description": "",
+    "main": "puppeteer_file.js",
+    "scripts": {
+        "start": "node ./puppeteer_file.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/aqualam/download_ms_keyratios.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/aqualam/download_ms_keyratios/issues"
+    },
+    "homepage": "https://github.com/aqualam/download_ms_keyratios#readme",
+    "dependencies": {
+        "puppeteer": "^5.4.1"
+    }
+}

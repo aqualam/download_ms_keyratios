@@ -6,7 +6,8 @@ async function DownloadFile(url) {
     const page = await browser.newPage();
     await page._client.send("Page.setDownloadBehavior", {
         behavior: "allow",
-        downloadPath: `./csv/${today}`,
+//        downloadPath: `../key_ratios_csv/${today}`,
+        downloadPath: `../../key_ratios_csv/`,
     });
     await page.goto(url, { waitUntil: "networkidle2" });
     const html = await page.content();
@@ -15,11 +16,14 @@ async function DownloadFile(url) {
 }
 
 async function run() {
-    const links = [
-        "https://financials.morningstar.com/ratios/r.html?t=LOW&culture=en&platform=sal#tab-growth",
+    const stocks = [
+        "LOW",
+        "AAPL",
+        "V",
+        "CU",
 	];
-    for (let i = 0; i < links.length; i++) {
-        const url = links[i];
+    for (let i = 0; i < stocks.length; i++) {
+        const url = "https://financials.morningstar.com/ratios/r.html?t=" + stocks[i] + "&culture=en&platform=sal#tab-growth";
         console.log(`Starting ${url}...`);
         await DownloadFile(url);
         console.log(`Done! ${url}...`);
